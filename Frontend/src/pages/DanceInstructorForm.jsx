@@ -22,8 +22,9 @@ const DanceInstructorForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/instructors/apply", formData);
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/instructors/apply`, formData);
     alert("Form Submitted Successfully 🎉");
+    location.reload();
   };
 
   return (
